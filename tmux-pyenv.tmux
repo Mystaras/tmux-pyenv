@@ -4,17 +4,13 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source $CURRENT_DIR/scripts/helpers.sh
 
 pyenv_commands=(
-	"#($CURRENT_DIR/scripts/pyenv_version.sh)"
-	"#($CURRENT_DIR/scripts/pyenv_local.sh)"
-	"#($CURRENT_DIR/scripts/pyenv_global.sh)"
-	"#($CURRENT_DIR/scripts/pyenv_all.sh)"
+	"#($CURRENT_DIR/scripts/pyenv.sh)"
+	"#($CURRENT_DIR/scripts/pyenv_virtualenv.sh)"
 )
 
 pyenv_interpolation=(
-	"\#{pyenv_version}"
-	"\#{pyenv_local}"
-	"\#{pyenv_global}"
-	"\#{pyenv_all}"
+	"\#{pyenv}"
+	"\#{pyenv_virtualenv}"
 )
 
 do_interpolation() {

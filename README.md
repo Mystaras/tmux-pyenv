@@ -1,5 +1,6 @@
 # tmux-pyenv
 Simple TMUX plugin to keep track of you current global-local pyenvs.
+
 ![tmux-pyenv.gif](readme-img/tmux-pyenv.gif)
 
 ## Installation

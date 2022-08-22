@@ -2,25 +2,20 @@
 PANE_PATH=$(tmux display-message -p -F "#{pane_current_path}")
 cd $PANE_PATH
 
-out=""
-# if [ "$(pyenv version-name)" = "system" ]; then
-#     out+="🔴-"
-# else
-#     out+="🐍:$(pyenv version-name)-"
-# fi
+OUTPUT=""
 
 if [ "$(pyenv global)" = "system" ]; then
-    out+="🔴-"
+    OUTPUT+="🔴-"
 else
-    out+="🐍:$(pyenv global)-"
+    OUTPUT+="🐍:$(pyenv global)-"
 fi 
 
 if [ "$(pyenv local)" = "system" ]; then
-    out+="🔴"
+    OUTPUT+="🔴"
 else
-    out+="🐍:$(pyenv local)"
+    OUTPUT+="🐍:$(pyenv local)"
 fi
 
 
 
-printf "$out"
+printf "$OUTPUT"

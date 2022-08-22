@@ -3,19 +3,19 @@ PANE_PATH=$(tmux display-message -p -F "#{pane_current_path}")
 cd $PANE_PATH
 
 OUTPUT=""
+PYENV_GLOB="$(pyenv global)"
+PYENV_LOC="$(pyenv local)"
 
-if [ "$(pyenv global)" = "system" ]; then
+if [ $PYENV_GLOB = "system" ]; then
     OUTPUT+="🔴-"
 else
-    OUTPUT+="🐍:$(pyenv global)-"
+    OUTPUT+="🐍:$PYENV_GLOB-"
 fi 
 
-if [ "$(pyenv local)" = "system" ]; then
+if [ $PYENV_LOC = "system" ]; then
     OUTPUT+="🔴"
 else
-    OUTPUT+="🐍:$(pyenv local)"
+    OUTPUT+="🐍:$PYENV_LOC"
 fi
-
-
 
 printf "$OUTPUT"

@@ -7,7 +7,7 @@ PYENV_GLOB="$(pyenv global)"
 PYENV_LOC="$(pyenv local)"
 
 if [ $PYENV_GLOB != "system" ] || [ $PYENV_LOC != "system" ]; then
-    OUTPUT="#[bold]🐍env #[nobold]"
+    OUTPUT="#[bold]🐍 #[nobold]"
 
     if ! [ $PYENV_GLOB = "system" ]; then
         OUTPUT+="$PYENV_GLOB"
